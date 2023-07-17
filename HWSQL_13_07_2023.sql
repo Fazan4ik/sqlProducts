@@ -1,99 +1,99 @@
--- 1 задание
+-- 1 Р·Р°РґР°РЅРёРµ
 /*
-SELECT name, price, quantity, discount, country, price * quantity * (1 - discount / 100) AS 'выручка'
+SELECT name, price, quantity, discount, country, price * quantity * (1 - discount / 100) AS 'РІС‹СЂСѓС‡РєР°'
 FROM TableProducts
-WHERE name LIKE '%молоко%' OR name LIKE '%хлеб%' */
+WHERE name LIKE '%РјРѕР»РѕРєРѕ%' OR name LIKE '%С…Р»РµР±%' */
 
--- 2 задание
+-- 2 Р·Р°РґР°РЅРёРµ
 /*
 SELECT *
 FROM TableProducts
 WHERE (date_of_delivery = CAST(GETDATE() AS DATE) OR date_of_delivery = CAST(GETDATE() - 1 AS DATE)) AND quantity >= 10 */
 
--- 3 задание
+-- 3 Р·Р°РґР°РЅРёРµ
 /*
 SELECT name, price, date_of_delivery
 FROM TableProducts
 WHERE date_of_delivery >= DATEADD(MONTH, -1, GETDATE())
 ORDER BY 3 */
 
--- 4 задание
+-- 4 Р·Р°РґР°РЅРёРµ
 /*
 SELECT name, price, category, producer
 FROM TableProducts
-WHERE category = 'Кондитерские изделия' AND producer != 'Roshen' */
+WHERE category = 'РљРѕРЅРґРёС‚РµСЂСЃРєРёРµ РёР·РґРµР»РёСЏ' AND producer != 'Roshen' */
 
--- 5 задание
+-- 5 Р·Р°РґР°РЅРёРµ
 /*
 SELECT *
 FROM TableProducts
-WHERE name LIKE 'К%' AND category LIKE '%А%' */
+WHERE name LIKE 'Рљ%' AND category LIKE '%Рђ%' */
 
--- 6 задание
+-- 6 Р·Р°РґР°РЅРёРµ
 /*
 SELECT *
 FROM TableProducts
-WHERE name LIKE '[В-Л]%' */
+WHERE name LIKE '[Р’-Р›]%' */
 
--- 7 задание
+-- 7 Р·Р°РґР°РЅРёРµ
 /*
 SELECT *
 FROM TableProducts
 WHERE price < 50 AND date_of_delivery >= CAST('2023-05-01' AS DATE) AND date_of_delivery < CAST(GETDATE() AS DATE)
 ORDER BY date_of_delivery */
 
--- 8 задание
+-- 8 Р·Р°РґР°РЅРёРµ
 /*
 SELECT *
 FROM TableProducts
-WHERE category = 'Безалкогольные напитки' AND quantity > 100 */
+WHERE category = 'Р‘РµР·Р°Р»РєРѕРіРѕР»СЊРЅС‹Рµ РЅР°РїРёС‚РєРё' AND quantity > 100 */
 
--- 9 задание
+-- 9 Р·Р°РґР°РЅРёРµ
 /*
 SELECT name, price, country
 FROM TableProducts
 WHERE price BETWEEN 100 AND 200
 ORDER BY 2 */
 
--- 10 задание
+-- 10 Р·Р°РґР°РЅРёРµ
 /*
 UPDATE TableProductsCopy SET price *= 0.95
 SELECT *
 FROM TableProductsCopy */
 
--- 11 задание
+-- 11 Р·Р°РґР°РЅРёРµ
 /*
 UPDATE TableProductsCopy
 SET date_of_delivery = CAST(GETDATE() AS DATE)
 WHERE date_of_delivery IS NULL */
 
--- 12 задание
+-- 12 Р·Р°РґР°РЅРёРµ
 /*
 DELETE FROM TableProductsCopy 
 WHERE quantity < 500 AND price > 70 */
 
--- 13 задание
+-- 13 Р·Р°РґР°РЅРёРµ
 /*
 DELETE FROM TableProductsCopy
-WHERE category IN ('алкогольные напитки', 'кондитерские изделия') */
+WHERE category IN ('Р°Р»РєРѕРіРѕР»СЊРЅС‹Рµ РЅР°РїРёС‚РєРё', 'РєРѕРЅРґРёС‚РµСЂСЃРєРёРµ РёР·РґРµР»РёСЏ') */
 
--- 14 задание 
+-- 14 Р·Р°РґР°РЅРёРµ 
 /*
 DELETE FROM TableProductsCopy
 WHERE LEN(name) = 5 */
 
--- 15 задание
+-- 15 Р·Р°РґР°РЅРёРµ
 /*
 DELETE FROM TableProductsCopy
 WHERE date_of_delivery <= DATEADD(MONTH, -3, GETDATE()) */
 
--- 16 задание
+-- 16 Р·Р°РґР°РЅРёРµ
 /* 
 SELECT TOP 5 name, price, country
 FROM TableProducts
 ORDER BY 2 DESC */
 
--- 17 задание 
+-- 17 Р·Р°РґР°РЅРёРµ 
 /* 
 DELETE FROM TableProductsCopy
 WHERE producer IS NULL OR discount > 10 */
