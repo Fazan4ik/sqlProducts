@@ -1,12 +1,12 @@
--- Завдання 1
+-- Р—Р°РІРґР°РЅРЅСЏ 1
 /*
 DECLARE @hour_now int = DATEPART(HOUR, GETDATE())
-IF @hour_now BETWEEN 5 AND 11 PRINT 'Доброго ранку!'
-ELSE IF @hour_now BETWEEN 12 AND 16 PRINT 'Доброго дня!'
-ELSE IF @hour_now BETWEEN 17 AND 23 PRINT 'Доброго вечора!'
-ELSE PRINT 'Спокійной ночі!' */
+IF @hour_now BETWEEN 5 AND 11 PRINT 'Р”РѕР±СЂРѕРіРѕ СЂР°РЅРєСѓ!'
+ELSE IF @hour_now BETWEEN 12 AND 16 PRINT 'Р”РѕР±СЂРѕРіРѕ РґРЅСЏ!'
+ELSE IF @hour_now BETWEEN 17 AND 23 PRINT 'Р”РѕР±СЂРѕРіРѕ РІРµС‡РѕСЂР°!'
+ELSE PRINT 'РЎРїРѕРєС–Р№РЅРѕР№ РЅРѕС‡С–!' */
 
--- Завдання 2
+-- Р—Р°РІРґР°РЅРЅСЏ 2
 /*
 DECLARE @len_password int = 10
 DECLARE @current int = 0
@@ -25,7 +25,7 @@ END
 
 PRINT @new_password */
 
--- Завдання 3
+-- Р—Р°РІРґР°РЅРЅСЏ 3
 /*
 DECLARE @cur_num int = 0
 DECLARE @factorial_num int = 0
@@ -48,7 +48,7 @@ BEGIN
     SET @cur_num += 1
 END */
 
--- Завдання 4
+-- Р—Р°РІРґР°РЅРЅСЏ 4
 /*
 DECLARE @cur int = 3
 DECLARE @max_num int = 100000
@@ -71,7 +71,7 @@ BEGIN
     SET @cur += 1
 END */
 
--- Завдання 5
+-- Р—Р°РІРґР°РЅРЅСЏ 5
 DECLARE @capital INT = 500
 DECLARE @costPerSpin INT = 10
 DECLARE @balance INT = @capital
@@ -87,26 +87,26 @@ BEGIN
 	SET @spinResult2 = CAST(RAND() * 7 + 1 AS INT)
 	SET @spinResult3 = CAST(RAND() * 7 + 1 AS INT)
 
-    PRINT 'Результат крутки: ' + CAST(@spinResult1 AS NVARCHAR(10)) + ' - ' + CAST(@spinResult2 AS NVARCHAR(10)) + ' - ' + CAST(@spinResult3 AS NVARCHAR(10))
+    PRINT 'Р РµР·СѓР»СЊС‚Р°С‚ РєСЂСѓС‚РєРё: ' + CAST(@spinResult1 AS NVARCHAR(10)) + ' - ' + CAST(@spinResult2 AS NVARCHAR(10)) + ' - ' + CAST(@spinResult3 AS NVARCHAR(10))
     
     IF @spinResult1 = @spinResult2 AND @spinResult2 = @spinResult3
 	BEGIN
 		SET @balance += 50
-		PRINT 'Вітаємо, ви виграли 50 кредитів!'
+		PRINT 'Р’С–С‚Р°С”РјРѕ, РІРё РІРёРіСЂР°Р»Рё 50 РєСЂРµРґРёС‚С–РІ!'
 	END
 	ELSE IF @spinResult1 = 7 AND @spinResult2 = 7 AND @spinResult3 = 7
 	BEGIN
 		SET @balance += 777
-		PRINT 'ДЖЕК ПОТ, ви виграли 777 кредитів!'
+		PRINT 'Р”Р–Р•Рљ РџРћРў, РІРё РІРёРіСЂР°Р»Рё 777 РєСЂРµРґРёС‚С–РІ!'
 	END
 	ELSE
 	BEGIN
-		PRINT 'Нажаль, ви не виграли'
+		PRINT 'РќР°Р¶Р°Р»СЊ, РІРё РЅРµ РІРёРіСЂР°Р»Рё'
 		SET @balance -= 10
 	END
-PRINT 'баланс станом на зараз: ' + CAST(@balance AS NVARCHAR(10)) + ' кредитів'
+PRINT 'Р±Р°Р»Р°РЅСЃ СЃС‚Р°РЅРѕРј РЅР° Р·Р°СЂР°Р·: ' + CAST(@balance AS NVARCHAR(10)) + ' РєСЂРµРґРёС‚С–РІ'
 PRINT '----------------------------------'
 END
 
 IF @balance < @costPerSpin
-    PRINT 'Кінець гри, гроші закончились!'
+    PRINT 'РљС–РЅРµС†СЊ РіСЂРё, РіСЂРѕС€С– Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ!'
