@@ -16,10 +16,10 @@ WHILE @current < @len_password
 BEGIN
     SET @r = RAND() * 3
 	SET @new_password += CASE @r 
-				WHEN 0 THEN CHAR(RAND() * 26 + 65)
-				 WHEN 1 THEN CHAR(RAND() * 26 + 97)
-				 ELSE CHAR(RAND() * 10 + 48)
-	                     END
+		WHEN 0 THEN CHAR(RAND() * 26 + 65)
+		WHEN 1 THEN CHAR(RAND() * 26 + 97)
+		ELSE CHAR(RAND() * 10 + 48)
+	END
 	SET @current += 1
 END
 
