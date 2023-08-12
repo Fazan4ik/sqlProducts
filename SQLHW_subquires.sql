@@ -1,4 +1,4 @@
--- Завдання 1
+-- Р—Р°РІРґР°РЅРЅСЏ 1
 /* 
 SELECT p.name
 FROM Product AS p
@@ -7,50 +7,50 @@ FROM Sale AS s
 GROUP BY id_product
 ORDER BY COUNT(id_product) DESC) */
 
--- Завдання 2
+-- Р—Р°РІРґР°РЅРЅСЏ 2
 /*
-SELECT c.name AS 'Назва', CAST(COUNT(p.name) AS float) / (SELECT COUNT(*) FROM Product) * 100 AS '%'
+SELECT c.name AS 'РќР°Р·РІР°', CAST(COUNT(p.name) AS float) / (SELECT COUNT(*) FROM Product) * 100 AS '%'
 FROM Product AS p
 JOIN Category AS c ON c.id = p.id_category
 JOIN Sale AS s ON p.id = s.id_product
 GROUP BY c.name */
 
--- Завдання 3
+-- Р—Р°РІРґР°РЅРЅСЏ 3
 /* 
-SELECT s.name AS 'Поставники'
+SELECT s.name AS 'РџРѕСЃС‚Р°РІРЅРёРєРё'
 FROM Supplier AS s
-WHERE s.id IN (SELECT id_supplier FROM Delivery AS d WHERE d.id_product IN (SELECT id FROM Product AS p WHERE p.name NOT LIKE 'Йогурт')) */
+WHERE s.id IN (SELECT id_supplier FROM Delivery AS d WHERE d.id_product IN (SELECT id FROM Product AS p WHERE p.name NOT LIKE 'Р™РѕРіСѓСЂС‚')) */
 
--- Завдання 4
+-- Р—Р°РІРґР°РЅРЅСЏ 4
 /*
-SELECT p.name AS 'Назва виробника'
+SELECT p.name AS 'РќР°Р·РІР° РІРёСЂРѕР±РЅРёРєР°'
 FROM Producer p
 WHERE p.id_address IN (
     SELECT pr.id_address
     FROM Producer pr
-    WHERE pr.name = 'ООО “Зеленоглазое такси”')
+    WHERE pr.name = 'РћРћРћ вЂњР—РµР»РµРЅРѕРіР»Р°Р·РѕРµ С‚Р°РєСЃРёвЂќ')
 	*/
 
--- Завдання 5
+-- Р—Р°РІРґР°РЅРЅСЏ 5
 /*
-SELECT p.name AS 'Назва виробника'
+SELECT p.name AS 'РќР°Р·РІР° РІРёСЂРѕР±РЅРёРєР°'
 FROM Producer p
 WHERE (SELECT COUNT(*) FROM Product pr WHERE pr.id_producer = p.id) >
       (SELECT COUNT(*) FROM Product WHERE id_producer IN (
-          SELECT id FROM Producer WHERE name = 'ООО «Самтаймс»'))
+          SELECT id FROM Producer WHERE name = 'РћРћРћ В«РЎР°РјС‚Р°Р№РјСЃВ»'))
 */
 
--- Завдання 6
+-- Р—Р°РІРґР°РЅРЅСЏ 6
 /* 
-SELECT s.date_of_sale AS 'дата продажу', SUM(s.quantity) AS 'Кількість продажів'
+SELECT s.date_of_sale AS 'РґР°С‚Р° РїСЂРѕРґР°Р¶Сѓ', SUM(s.quantity) AS 'РљС–Р»СЊРєС–СЃС‚СЊ РїСЂРѕРґР°Р¶С–РІ'
 FROM Sale AS s
 WHERE s.date_of_sale BETWEEN '2023-01-01' AND GETDATE()
 GROUP BY s.date_of_sale
 ORDER BY 1 DESC */
 
--- Завдання 7
+-- Р—Р°РІРґР°РЅРЅСЏ 7
 /*
-SELECT temp.category AS 'Категорія', COUNT(temp.name) AS 'Кількість товарів для списання'
+SELECT temp.category AS 'РљР°С‚РµРіРѕСЂС–СЏ', COUNT(temp.name) AS 'РљС–Р»СЊРєС–СЃС‚СЊ С‚РѕРІР°СЂС–РІ РґР»СЏ СЃРїРёСЃР°РЅРЅСЏ'
 FROM
 (
     SELECT p.name, c.name AS 'category' FROM Product AS p JOIN Category AS c ON c.id = p.id_category
