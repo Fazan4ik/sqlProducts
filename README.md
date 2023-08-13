@@ -11,3 +11,6 @@
 
 Задание на диаграмы
 ![image](https://github.com/Fazan4ik/sqlProducts/assets/91279825/c063241d-ee77-44de-8ec4-2de6b9a8adff)
+
+Задание на Publishment 
+![image](https://github.com/Fazan4ik/sqlProducts/assets/91279825/e67b76b0-17d6-418e-bfdd-46be9e894ca8)
